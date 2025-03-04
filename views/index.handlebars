@@ -4,25 +4,27 @@
         <h1 class="logo">Music Shop🎸</h1>
       </a>
       <!-- TODO: Replace the below value with the real cart count -->
-      <a href="/cart" class="cart-link">Cart (3)</a>
+      <a href="/cart" class="cart-link">Cart ({{cartCount}})</a>
     </div>
   </header>
   <main>
     <h2>Items for Sale</h2>
     <section id="saleItems">
 <!-- TODO: 👇Use a handlebars each helper to loop over inventory items👇 -->
+      {{#each inventoryItems}}
       <!-- replace with product id -->
-      <a href="/product/1" class="sale-item">
+      <a href="/product/{{productId}}" class="sale-item">
         <div class="item-img-container">
           <!-- replace with product image and name -->
-          <img src="images/strat.jpg" alt="Stratocaster" />
+          <img src={{product.image}} alt={{product.name}} />
           <!-- replace with product description -->
-          <p>One of the most iconic electric guitars ever made.</p>
+          <p>{{product.description}}</p>
         </div>
   <!-- replace with product name and price -->
-        <p>Stratocaster</p>
-        <p>$599.99</p>
+        <p>{{product.name}}</p>
+        <p>${{product.price}}</p>
       </a>
+      {{/each}}
 <!-- TODO: 👆Use a handlebars each helper to loop over inventory items👆 -->
     </section>
   </main>
@@ -30,6 +32,5 @@
     <p>&copy; Music Shop</p>
   </footer>
 <!-- 👇Remove this markup when converting to a handlebars template 👇 -->
-</body>
-</html>
+
 <!-- 👆Remove this markup when converting to a handlebars template👆 -->
