@@ -33,16 +33,16 @@
                 Quantity
 <!-- ///replace with cart id, set max to inventoryQuantity, value to quantity -->
                 <input
-                  data-cart-id="{{this.id}}"
+                  data-cart-id={{this.id}}
                   type="number"
                   min="0"
-                  max="{{this.inventory.quantity}}"
-                  value="{{this.quantity}}" />
+                  max={{this.inventory.quantity}}
+                  value={{this.quantity}} />
               </label>
               <!-- ///replace with cart id -->
               <button
                 class="remove-from-cart"
-                data-cart-id="{{this.id}}">
+                data-cart-id={{this.id}}>
                 Remove
               </button>
             </div>
