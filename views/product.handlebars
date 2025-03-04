@@ -4,21 +4,21 @@
       <h1 class="logo">Music Shop🎸</h1>
     </a>
     <!-- replace with cartCount -->
-    <a href="/cart" class="cart-link">Cart (7)</a>
+    <a href="/cart" class="cart-link">{{cartCount}}</a>
   </div>
 </header>
 <main>
   <section id="product-container">
     <!-- replace with product image and name -->
-    <img src="/images/strat.jpg" alt="Stratocaster"/>
+    <img src={{product.image}} alt={{product.name}}/>
     <!-- replace form action id # with product id -->
-      <form method="POST" action="/api/cart?inventoryId=1">
+      <form method="POST" action="/api/cart?inventoryId={{product.id}}">
         <!-- replace with product name -->
-        <h2>Stratocaster</h2>
+        <h2>{{product.name}}</h2>
         <!-- replace with product description -->
-        <p>One of the most iconic electric guitars ever made.</p>
+        <p>{{product.description}}</p>
         <!-- replace with product price -->
-        <p>$599.99</p>
+        <p>${{product.price}}</p>
         <label for="quantity-input">
           Quantity
     <!-- replace max input attribute with quantity -->
@@ -28,7 +28,7 @@
             type="number"
             min="1"
             value="1"
-            max="3" />
+            max="{{product.quantity}}" />
         </label>
         <button>Add to Cart</button>
       </form>
@@ -39,6 +39,5 @@
   <p>&copy; Music Shop</p>
 </footer>
 <!-- 👇Remove this markup when converting to a handlebars template 👇 -->
-</body>
-</html>
+
 <!-- 👆Remove this markup when converting to a handlebars template👆 -->
