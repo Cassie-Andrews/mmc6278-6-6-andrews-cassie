@@ -33,11 +33,11 @@
                 Quantity
 <!-- replace with cart id, set max to inventoryQuantity, value to quantity -->
                 <input
-                  data-cart-id="1"
+                  data-cart-id="{{this.id}}"
                   type="number"
                   min="0"
-                  max="3"
-                  value="1" />
+                  max="{{this.inventory.quantity}}"
+                  value="{{this.quantity}}" />
               </label>
               <!-- replace with cart id -->
               <button
