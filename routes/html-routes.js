@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     // res.sendFile(path.join(__dirname, '../views/index.html'))
   res.render("index", {
     cartCount: cartCount || 0,
-    inventoryItems: rows
+    inventoryItems: inventoryItems
   }
   )
 })
