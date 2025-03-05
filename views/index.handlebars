@@ -12,11 +12,11 @@
       {{#each inventoryItems}}
       <a href="/product/{{productId}}" class="sale-item">
         <div class="item-img-container">
-          <img src="/images/{{product.image}}" alt="{{product.name}}" />
-          <p>{{product.description}}</p>
+          <img src="/images/{{image}}" alt="{{name}}" />
+          <p>{{description}}</p>
         </div>
-        <p>{{product.name}}</p>
-        <p>${{product.price}}</p>
+        <p>{{name}}</p>
+        <p>${{price}}</p>
       </a>
       {{/each}}
     </section>
