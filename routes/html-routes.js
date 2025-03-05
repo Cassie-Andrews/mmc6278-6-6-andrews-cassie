@@ -3,16 +3,20 @@ const db = require('../db')
 const path = require('path')
 
 router.get('/', async (req, res) => {
-  const [inventoryItems] = await db.query('SELECT * FROM inventory;')
-  const [[{cartCount}]] = await db.query('SELECT SUM(quantity) AS cartCount FROM cart;')
+  try {
+    const [inventoryItems] = await db.query('SELECT * FROM inventory;')
+    const [[{cartCount}]] = await db.query('SELECT SUM(quantity) AS cartCount FROM cart;')
 
-  // TODO: Convert the response below to render a handlebars template
-    // res.sendFile(path.join(__dirname, '../views/index.html'))
-  res.render("index", {
-    cartCount: cartCount || 0,
-    inventoryItems: inventoryItems
+    // TODO: Convert the response below to render a handlebars template
+      // res.sendFile(path.join(__dirname, '../views/index.html'))
+    res.render("index", {
+      cartCount: cartCount || 0,
+      inventoryItems: inventoryItems
+    });
+  } catch (err) {
+    console.log(error)
+    res.status(500).send('Server error')
   }
-  )
 })
 
 router.get('/product/:id', async (req, res) => {
