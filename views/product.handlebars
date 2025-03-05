@@ -8,8 +8,8 @@
 </header>
 <main>
   <section id="product-container">
-    <img src="{{product.image}}" alt="{{product.name}}"/>
-      <form method="POST" action="/api/cart?inventoryId={{product.id}}">
+    <img src="{{product.image}}" alt="{{product.name}}" />
+      <form method="POST" action="/api/cart?inventoryId={{product.id}}" >
         <h2>{{product.name}}</h2>
         <p>{{product.description}}</p>
         <p>${{product.price}}</p>
