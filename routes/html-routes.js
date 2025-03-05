@@ -3,7 +3,7 @@ const db = require('../db')
 const path = require('path')
 
 router.get('/', async (req, res) => {
-  const [rows] = await db.query('SELECT * FROM inventory;')
+  const [inventoryItems] = await db.query('SELECT * FROM inventory;')
   const [[{cartCount}]] = await db.query('SELECT SUM(quantity) AS cartCount FROM cart;')
 
   // TODO: Convert the response below to render a handlebars template
