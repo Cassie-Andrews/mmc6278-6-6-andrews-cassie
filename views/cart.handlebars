@@ -12,17 +12,12 @@
   </p>
   <section id="cart">
     <div class="cart-items">
-<!-- ///TODO: 👇Use a handlebars each helper to loop over cart items👇 -->
       {{#each cartItems}}
         <div class="cart-item">
-    <!-- ///replace with inventoryId -->
-          <a
-            href="/product/{{this.inventoryId}}"
+          <a href="/product/{{this.inventoryId}}"
             class="cart-item-info">
-    <!-- ///replace with product image -->
-            <img src={{this.product.image}} alt={{this.product.name}} />
+            <img src="{{this.product.image}}" alt="{{this.product.name}}" />
             <div>
-    <!-- ///replace with product name and price -->
               <p>{{this.product.name}}</p>
               <p>${{this.product.price}}</p>
             </div>
@@ -31,32 +26,27 @@
             <div class="cart-item-controls">
               <label>
                 Quantity
-<!-- ///replace with cart id, set max to inventoryQuantity, value to quantity -->
                 <input
-                  data-cart-id={{this.id}}
+                  data-cart-id="{{this.id}}"
                   type="number"
                   min="0"
-                  max={{this.inventory.quantity}}
-                  value={{this.quantity}} />
+                  max="{{this.inventory.quantity}}"
+                  value="{{this.quantity}}" />
               </label>
-              <!-- ///replace with cart id -->
               <button
                 class="remove-from-cart"
-                data-cart-id={{this.id}}>
+                data-cart-id="{{this.id}}">
                 Remove
               </button>
             </div>
-<!-- replace with calculatedPrice -->
             <p>${{this.calculatedPrice}}</p>
           </div>
         </div>
         <hr />
       {{/each}}
-<!-- TODO: 👆Use a handlebars each helper to loop over cart items👆 -->
       <div class="cart-total">
         <p>Total:</p>
-<!-- TODO: Replace with cart total -->
-        <p>${{this.cartTotal}}</p>
+        <p>${{cartTotal}}</p>
       </div>
       <button id="emptyCart">Empty Cart</button>
     </div>
